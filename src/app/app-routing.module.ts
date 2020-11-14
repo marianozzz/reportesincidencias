@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { IncidentAddComponent } from './components/incident-add/incident-add.component';
+import { IncidentListComponent } from './components/incident-list/incident-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'incident', component: IncidentAddComponent },
+  { path: 'list', component: IncidentListComponent },
+  { path: 'notfound', component: NotFoundComponent },
+  { path: "**", redirectTo: "", component: IncidentListComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,45 @@
+<main class="py-5">
+    <div class="container">
+        <h3 class="mb-3">Create Incident</h3>
+        <form [formGroup]="incidentForm" (ngSubmit)="onSubmit()">
+            <div class="bg-light p-4">
+                <div class="form-row">
+                    <div class="form-group col-lg-2">
+                        <label for="">Priority</label>
+                        <select formControlName="priorityId" class="form-control form-control-ml">
+                            <option disabled [ngValue]="undefined">Select Priority</option>
+                            <option *ngFor="let valueEntity of priorityArray" [ngValue]="valueEntity.idValueEntity">
+                                {{valueEntity.description}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <label for="">Domain</label>
+                        <input formControlName="domainName" type="text" class="form-control form-control-ml" />
+                    </div>
+                    <div class="form-group col-lg-7">
+                        <label for="">Title</label>
+                        <input formControlName="title" type="text" class="form-control form-control-ml" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-lg-12">
+                        <label for="">Description</label>
+                        <textarea formControlName="description" class="form-control form-control-ml"
+                            rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <label for="">Creator</label>
+                        <input formControlName="creator" type="text" class="form-control form-control-ml" />
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="">Phone Number</label>
+                        <input formControlName="phoneNumber" type="text" class="form-control form-control-ml" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" >Submit Incident</button>
+            </div>
+        </form>
+    </div>
+</main>
